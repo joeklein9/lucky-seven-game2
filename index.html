@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+    <head><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+        <title></title>
+        <link rel="stylesheet" href="index.css">
+    </head>
+    <body>
+        <h1>Lucky Seven - the dice game</h1>
+        <div class = "container">
+            <div class = "button-container">
+                <button id = "roll-btn" disabled>Roll</button>
+                <button id = "bank-btn" disabled>Bank</button>
+            </div>
+            
+            <div id = "banks-counter">Banks used (out of 5):</div>
+            
+            <div class = "dice-container">
+                <div id = "dice-one"> - </div>
+                <div id = "dice-two"> - </div>
+                
+            </div>
+            <div class = "sum-box-container">
+                <div class = "sum-box">Sum
+                    <div id = "sum-result">-</div>
+                </div>
+            </div>
+            
+            <div class = "point-tokens-container" id = "point-tokens-container"> Point Tokens: </div>
+            <div class = "banked-points-container" id = "banked-points-container"> Banked Points: </div>
+            <div class = "bonus-tokens-container" id = "bonus-token-container"> Bonus Tokens: </div>
+            <div class = "final-results-message" id = "final-results-message"> </div>
+            <button class = "play-again" id = "play-again">Play again?</button>
+            
+
+        </div>
+        
+        <div class = "game-rules">
+        
+            <p> Game rules:</p>
+            <p> This is a push your luck game. You roll two dice - if the result is a 7, you score a point token worth a random amount of points (between 1-3). The number of points you have accrued is your threshold for busting. So, if you have 5 points, if you roll less than or equal to 5 then you bust and lose all of your non-banked points. </p>
+        
+            <p> The more points you get, the easier it is to bust. You can stop at any time to 'bank' the points you have earned so far. However, the more point tokens you bank at one time, the bigger the bonus. You only get to bank 5 times during the game. This creates an interesting decision. Do you bank your earnings quickly whenever you can to increase your score in small increments, which is safer? Or do you avoid banking and try to score big in one go, thus scoring the big bonus points?   
+            </p>
+            
+            <p> Good luck! </p>
+            
+            <ul>
+            
+                <li> Banking when your total point value is between 3-5 gives you a random bonus token worth between 1-3 points.</li>
+                
+                <li> Banking when your total point value is between 6-9 gives you a random bonus token worth between 5-7 points. </li>
+                
+                <li> Banking when your total point value is 10 or greater gives you a guaranteed 10 point bonus token!</li>
+            </ul>
+        </div>
+        
+
+        <script src="index.js"></script>
+    </body>
+</html>
