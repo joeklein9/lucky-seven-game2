@@ -117,9 +117,9 @@ bankBtn.addEventListener("click", function (){
     bankBtnClicks += 1
     if (bankBtnClicks === 5) {
         bankBtn.disabled = true
+        allBanksUsed()
     }
     banksCounter.textContent = `Banks used (out of 5): ${bankBtnClicks}`
-    
 })
 
 // If banked point token value is greater than 3, earn bonus token worth between 1-3 points. If greater than 6, earn bonus token worth between 4-6 points. If greater than 9, earn points worth between 7-9 points. If greater than 10, guaranteed 10 points.
@@ -207,4 +207,22 @@ playAgainBtn.addEventListener("click", function (){
     
    
 })
+
+// Function to end game when banks have all been used - also displays final score
+
+function allBanksUsed () 
+{
+    if (bankBtnClicks == 5) 
+    {
+        let bankedPointSum = getBankedPointsSum()
+        let bonusTokenSum = getBonusTokensSum()
+        finalResultsMessage.textContent = `No more banks left! Your final total: ${bankedPointSum + bonusTokenSum}`
+        pointTokenContainer.classList.toggle("line-through")
+        document.getElementById("play-again").style.visibility = "visible"
+        rollBtn.disabled = true
+        bankBtn.disabled = true
+    
+}
+}
+
 
