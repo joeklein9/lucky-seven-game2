@@ -163,7 +163,7 @@ function displayBonusTokens () {
 
 function determineBust () {
     let pointTokenSum = getPointTokenSum()
-    if (sumResultValue < pointTokenSum) {
+    if (sumResultValue < pointTokenSum && sumResultValue != 7) {
         isBusted = true
         displayFinalTotal()
         playAgainBtn.classList.add(".show-button")
