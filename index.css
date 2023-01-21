@@ -7,14 +7,14 @@ html, body {
 }
 
 .container {
-    
     max-width:500px;
     margin-left:360px;
     margin-right:100px;
     border:10px solid black;
     padding:20px;
     background-image: linear-gradient(to bottom right, white, lightblue);
-   
+    transform: scale(1.2);
+    
 }
 
 h1 {
