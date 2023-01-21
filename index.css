@@ -9,6 +9,7 @@ html, body {
 .container {
     max-width:500px;
     margin: 0 auto;
+    margin-top:20px
     border:10px solid black;
     padding:20px;
     background-image: linear-gradient(to bottom right, white, lightblue);
