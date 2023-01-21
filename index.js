@@ -1,6 +1,3 @@
-/*This is a push your luck game. You roll two dice - if the result is a 7, you score a point token worth a random amount of points (between 1-3). The number of points you have accrued is your threshold for busting. So, if you have 5 points, if you roll less than a 5 then you bust and lose all of your non-banked points. The more points you get, the easier it is to bust. You can stop at any time to 'bank' the points you have earned so far. However, the more point tokens you bank at one time, the bigger the bonus. This creates an interesting decision. Do you bank your earnings quickly whenever you can to increase your score in small increments, which is safer? Or do you avoid banking and try to score big in one go, thus scoring the big bonus points?
-*/ 
-
 const rollBtn = document.getElementById("roll-btn")
 const bankBtn = document.getElementById("bank-btn")
 let diceOne = document.getElementById("dice-one")
@@ -12,6 +9,7 @@ const bonusTokenContainer = document.getElementById("bonus-token-container")
 const finalResultsMessage = document.getElementById("final-results-message")
 const playAgainBtn = document.getElementById("play-again")
 const banksCounter = document.getElementById("banks-counter")
+const scoreBoard = document.getElementById("score-board")
 
 let diceOneValue = 0
 let diceTwoValue = 0
@@ -19,6 +17,7 @@ let sumResultValue = 0
 let pointTokenValueArray = []
 let bankedPointsArray = []
 let bonusTokenArray = []
+let scoreBoardArray = []
 let bankedPointSum = 0
 let isBusted = false
 let bankBtnClicks = 0
@@ -182,6 +181,10 @@ function displayFinalTotal () {
     pointTokenContainer.classList.toggle("line-through")
     rollBtn.disabled = true
     bankBtn.disabled = true
+    scoreBoardArray.push(bankedPointSum + bonusTokenSum)
+    document.getElementById("score-board-container").style.visibility = "visible"
+    scoreBoard.textContent += "   " + scoreBoardArray[scoreBoardArray.length -1] + "   " + "|"
+
 }
 
 // Add event listener to play again button to reset the game
@@ -221,8 +224,9 @@ function allBanksUsed ()
         document.getElementById("play-again").style.visibility = "visible"
         rollBtn.disabled = true
         bankBtn.disabled = true
-    
-}
-}
+        scoreBoardArray.push(bankedPointSum + bonusTokenSum)
+        document.getElementById("score-board-container").style.visibility = "visible"
+        scoreBoard.textContent += "   " + scoreBoardArray[scoreBoardArray.length -1] + "   " + "|"
 
-
+    } 
+}
